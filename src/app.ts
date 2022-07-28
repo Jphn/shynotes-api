@@ -1,6 +1,6 @@
-import { Application } from 'https://deno.land/x/oak@v10.6.0/mod.ts';
-import 'https://deno.land/x/dotenv@v3.2.0/load.ts';
+import { Application } from 'oak';
 import router from './routes.ts';
+import 'dotenv';
 
 const app = new Application();
 
