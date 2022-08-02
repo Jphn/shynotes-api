@@ -9,7 +9,7 @@ export class MongoNotesRepository implements INotesRepository {
 		return await this.notesCollection.findOne({ name: name });
 	}
 
-	public save(note: Note): void {
-		this.notesCollection.insertOne(note);
+	public async save(note: Note): Promise<void> {
+		await this.notesCollection.insertOne(note);
 	}
 }
