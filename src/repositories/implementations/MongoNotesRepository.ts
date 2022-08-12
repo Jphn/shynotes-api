@@ -12,4 +12,17 @@ export class MongoNotesRepository implements INotesRepository {
 	public async save(note: Note): Promise<void> {
 		await this.notesCollection.insertOne(note);
 	}
+
+	public async updateContentByName(
+		name: string,
+		content: string,
+	): Promise<void> {
+		if (!(await this.findByNoteName(name))) throw new Error('Note not found.');
+
+		await this.notesCollection.updateOne({ name: name }, {
+			$set: {
+				content: content,
+			},
+		});
+	}
 }

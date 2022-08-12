@@ -12,4 +12,10 @@ export class InMemoryNotesRepository implements INotesRepository {
 		return await this.notes.find((element) => element.name === name) ??
 			undefined;
 	}
+
+	public async updateContentByName(
+		name: string,
+		content: string,
+	): Promise<void> {
+	}
 }
