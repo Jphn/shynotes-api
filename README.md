@@ -15,4 +15,4 @@
 
 ## Author
 
-**[@Jphn](https://github.com/Jphn)**
+**[@João Pedro Holanda Neves](https://github.com/Jphn)**
