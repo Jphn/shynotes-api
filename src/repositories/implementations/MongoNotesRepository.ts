@@ -16,7 +16,7 @@ export class MongoNotesRepository implements INotesRepository {
 	public async updateContentByName(
 		name: string,
 		content: string,
-	): Promise<void> {
+	) {
 		if (!(await this.findByNoteName(name))) throw new Error('Note not found.');
 
 		await this.notesCollection.updateOne({ name: name }, {
@@ -24,5 +24,9 @@ export class MongoNotesRepository implements INotesRepository {
 				content: content,
 			},
 		});
+	}
+
+	public async deleteNoteByName(name: string) {
+		await this.notesCollection.deleteOne({ name: name });
 	}
 }

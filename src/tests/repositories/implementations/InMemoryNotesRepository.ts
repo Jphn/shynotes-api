@@ -16,6 +16,12 @@ export class InMemoryNotesRepository implements INotesRepository {
 	public async updateContentByName(
 		name: string,
 		content: string,
-	): Promise<void> {
+	) {
+	}
+
+	public async deleteNoteByName(name: string) {
+		this.notes = await this.notes.filter((value) => {
+			return value.name !== name;
+		});
 	}
 }
