@@ -40,11 +40,16 @@
 
 ```http
   REQUEST: GET /notes/{name}
+  RESPONSE: JSON {
+    name,
+    content
+  }
 ```
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `name`      | `string` | **Obrigatório**. Nome da nota. |
+| `content`      | `string` | **Obrigatório**. Conteúdo da nota. |
 
 Retornará um JSON com os valores da nota.
 
