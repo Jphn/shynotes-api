@@ -19,7 +19,7 @@ export class GetNoteByNameController {
 			response.status = 200;
 			return response.body = note;
 		} catch (error) {
-			response.status = 402;
+			response.status = 404;
 			return response.body = {
 				message: error.message || 'Unexpected error.',
 			};
