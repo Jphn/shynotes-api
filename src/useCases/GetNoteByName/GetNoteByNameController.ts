@@ -7,7 +7,7 @@ export class GetNoteByNameController {
 	) {}
 
 	public async handle(
-		{ params, response }: RouterContext<'/notes/:name', { name: string }>,
+		{ params, response }: RouterContext<any, { name: string }>,
 	) {
 		try {
 			const name = params.name;
@@ -19,7 +19,7 @@ export class GetNoteByNameController {
 			response.status = 200;
 			return response.body = note;
 		} catch (error) {
-			response.status = 404;
+			response.status = 204;
 			return response.body = {
 				message: error.message || 'Unexpected error.',
 			};
